@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
-import reactRefresh from "@vitejs/plugin-react-refresh"; // 热更新
+import react from '@vitejs/plugin-react';
+import vitePluginImp from 'vite-plugin-imp';
+
 const path = require('path');
 
 export default defineConfig({
@@ -9,7 +11,15 @@ export default defineConfig({
         },
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     },
-    plugins:[
-        reactRefresh()
+    plugins: [
+        react(),
+        vitePluginImp({
+            libList: [
+                {
+                    libName: 'antd',
+                    style: (name) => `antd/lib/${name}/style/index.css`
+                }
+            ]
+        })
     ]
 });
