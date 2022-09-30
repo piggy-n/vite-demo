@@ -1,22 +1,39 @@
 {
   "name": "ws-player",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "version": "1.0.0",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/ws-player.umd.js",
+  "module": "dist/ws-player.js",
+  "types": "dist/index.d.ts",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./dist/ws-player.js",
+      "require": "./dist/ws-player.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
-    "@vitejs/plugin-react": "^2.1.0",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4",
-    "vite-plugin-imp": "^2.3.0"
-  },
-  "dependencies": {
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "antd": "^4.23.3",
+    "autoprefixer": "^10.4.12",
+    "less": "^4.1.3",
+    "less-loader": "^11.0.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.4",
+    "vite-plugin-imp": "^2.3.0",
+    "vite-plugin-libcss": "^1.0.5"
+  },
+  "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
